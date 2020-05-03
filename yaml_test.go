@@ -1,6 +1,7 @@
 package yamladapter
 
 import (
+	"bytes"
 	"io/ioutil"
 	"testing"
 )
@@ -23,13 +24,7 @@ func TestYamlAdapter(t *testing.T) {
 		t.Fatalf("error while parsing yaml config: %v", err)
 	}
 
-	// Pretty print json
-	j, err = jsonPrettyPrint(j)
-	if err != nil {
-		t.Fatalf("error while indenting json: %v", err)
-	}
-
-	if string(jsonConf) != string(j) {
+	if !bytes.Equal(jsonConf, j) {
 		t.Fatalf("expected result: %s, got: %s", jsonConf, j)
 	}
 }
