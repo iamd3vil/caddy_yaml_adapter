@@ -1,13 +1,1 @@
-{
-    "apps": {
-        "http": {
-            "servers": {
-                "myserver": {
-                    "listen": [
-                        ":80"
-                    ]
-                }
-            }
-        }
-    }
-}
+{"apps":{"http":{"servers":{"myserver":{"listen":[":80"]}}}}}
